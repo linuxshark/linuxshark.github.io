@@ -3,4 +3,4 @@
 
 ## Recipes in this category:
 
-Comming soon
+Coming soon
