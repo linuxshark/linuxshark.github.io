@@ -1,4 +1,4 @@
-# LINUX SECTION
+# ASTERISK SECTION
 
 
 ## Recipes in this category:
