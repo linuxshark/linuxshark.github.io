@@ -3,4 +3,4 @@
 
 ## Recipes in this category:
 
-Coming soon
+- [Knowledge Basement install based on PhpMyFAQ and CentOS 7](git@github.com:linuxshark/KB-PhpMyFAQ-install.git)
