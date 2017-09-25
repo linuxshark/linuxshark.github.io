@@ -16,3 +16,14 @@ This repository (and it's github page counterpart) is divided on the following s
 
 **Why i'm doing this ?**
 
+
+Enjoy !!!
+
+**Raúl E. Linares N.**
+
+**Caracas, Venezuela:**
+
+**Linares.voip AT gmail DOT com**
+
+**[My Linkedin Profile](https://www.linkedin.com/in/ra%C3%BAl-linares-navas-773527114/)**
+
