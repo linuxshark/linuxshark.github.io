@@ -1,4 +1,4 @@
-# WELCOME TO LINUXSHARK RECIPES FOR I.T. & VoIP SURVIVAL
+#WELCOME TO LINUXSHARK RECIPES FOR I.T. & VoIP SURVIVAL
 
 Hello EveryOne,
 
@@ -12,7 +12,7 @@ This repository (and it's github page counterpart) is divided on the following s
 
 * [Asterisk:](http://linuxshark.github.io/recipes/asterisk) Everything related to Asterisk VoIP implementations.
 * [Linux:](http://linuxshark.github.io/recipes/linux) All linux related stuff.
-* [Cloud Computing:](http://linuxshark.github.io/recipes/cloudcomputing) All linux related stuff.
+* [Cloud Computing:](http://linuxshark.github.io/recipes/cloudcomputing) All AWS & OpenStack related stuff.
 
 **What's my motivation for doing this ?**
 
