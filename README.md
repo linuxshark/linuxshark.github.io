@@ -26,4 +26,5 @@ Enjoy !!!
 **Linares.voip AT gmail DOT com**
 
 **[My Linkedin Profile](https://www.linkedin.com/in/ra%C3%BAl-linares-773527114/)** 
+Hyper-Link broken for some LinkedIn site reasons: https://www.linkedin.com/in/ra%C3%BAl-linares-773527114/
 
