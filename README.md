@@ -25,5 +25,5 @@ Enjoy !!!
 
 **Linares.voip AT gmail DOT com**
 
-**[My Linkedin Profile](https://www.linkedin.com/in/ra%C3%BAl-linares-navas-773527114/)**
+**[My Linkedin Profile](https://www.linkedin.com/in/raul-linares-773527114/)**
 
