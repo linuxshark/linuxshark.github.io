@@ -128,22 +128,58 @@
   .recipes-header p { color: #64748b; font-size: 15px; }
 
   /* CATEGORY */
-  .category { margin-bottom: 48px; }
+  .category { margin-bottom: 20px; }
   .category:last-child { margin-bottom: 0; }
   .category-header {
     display: flex; align-items: center; gap: 12px;
-    margin-bottom: 20px; padding-bottom: 12px;
-    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+    padding: 16px 20px;
+    background: rgba(30, 30, 60, 0.6);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
   }
+  .category-header:hover {
+    background: rgba(30, 30, 60, 0.85);
+    border-color: rgba(0, 212, 255, 0.25);
+  }
+  .category.open .category-header {
+    border-radius: 10px 10px 0 0;
+    border-bottom-color: rgba(0, 212, 255, 0.05);
+  }
+  .category-chevron {
+    margin-left: auto; font-size: 14px; color: #64748b;
+    transition: transform 0.3s;
+  }
+  .category.open .category-chevron { transform: rotate(90deg); }
   .category-icon {
     width: 40px; height: 40px; border-radius: 10px;
     display: flex; align-items: center; justify-content: center;
-    font-size: 20px;
+    font-size: 20px; flex-shrink: 0;
   }
   .category-icon.asterisk { background: rgba(16, 185, 129, 0.12); }
   .category-icon.linux { background: rgba(0, 212, 255, 0.12); }
   .category-icon.cloud { background: rgba(123, 47, 247, 0.12); }
+  .category-icon.secrets { background: rgba(251, 191, 36, 0.12); }
   .category h3 { font-size: 20px; font-weight: 600; color: #f8fafc; }
+  .category-count {
+    font-size: 12px; color: #64748b;
+    background: rgba(100, 116, 139, 0.15);
+    padding: 2px 8px; border-radius: 10px;
+  }
+
+  /* RECIPE LIST COLLAPSIBLE */
+  .recipe-list {
+    display: flex; flex-direction: column; gap: 10px;
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 0;
+  }
+  .category.open .recipe-list {
+    max-height: 800px;
+    padding: 12px 0 0;
+  }
 
   /* RECIPE CARDS */
   .recipe-list { display: flex; flex-direction: column; gap: 10px; }
@@ -174,6 +210,7 @@
   .recipe-card .dot.asterisk { background: #10b981; box-shadow: 0 0 8px rgba(16, 185, 129, 0.4); }
   .recipe-card .dot.linux { background: #00d4ff; box-shadow: 0 0 8px rgba(0, 212, 255, 0.4); }
   .recipe-card .dot.cloud { background: #7b2ff7; box-shadow: 0 0 8px rgba(123, 47, 247, 0.4); }
+  .recipe-card .dot.secrets { background: #fbbf24; box-shadow: 0 0 8px rgba(251, 191, 36, 0.4); }
   .recipe-card .text { color: #cbd5e1; font-size: 14px; }
   .recipe-card:hover .text { color: #f1f5f9; }
 
@@ -245,27 +282,46 @@
 <section class="recipes" id="recipes">
   <div class="recipes-header">
     <h2>Knowledge Base</h2>
-    <p>Caracas, Venezuela</p>
+    <p>Santiago de Chile</p>
+  </div>
+
+  <!-- SECRETS -->
+  <div class="category" onclick="this.classList.toggle('open')">
+    <div class="category-header">
+      <div class="category-icon secrets">🔐</div>
+      <h3>Secrets</h3>
+      <span class="category-count">1</span>
+      <span class="category-chevron">▶</span>
+    </div>
+    <div class="recipe-list">
+      <a href="https://github.com/linuxshark/vault-training" class="recipe-card" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+        <span class="dot secrets"></span>
+        <span class="text">HashiCorp Vault Associate (003) — Study Interface &amp; Training</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
   </div>
 
   <!-- ASTERISK -->
-  <div class="category">
+  <div class="category" onclick="this.classList.toggle('open')">
     <div class="category-header">
       <div class="category-icon asterisk">📞</div>
       <h3>Asterisk</h3>
+      <span class="category-count">3</span>
+      <span class="category-chevron">▶</span>
     </div>
     <div class="recipe-list">
-      <a href="https://github.com/linuxshark/asterisk-autoinstall" class="recipe-card" target="_blank" rel="noopener">
+      <a href="https://github.com/linuxshark/asterisk-autoinstall" class="recipe-card" target="_blank" rel="noopener" onclick="event.stopPropagation()">
         <span class="dot asterisk"></span>
         <span class="text">Asterisk 11 + DAHDI 2.10 Automatic install on Debian 8</span>
         <span class="arrow">→</span>
       </a>
-      <a href="https://github.com/linuxshark/Asterisk-CentOS7-Install" class="recipe-card" target="_blank" rel="noopener">
+      <a href="https://github.com/linuxshark/Asterisk-CentOS7-Install" class="recipe-card" target="_blank" rel="noopener" onclick="event.stopPropagation()">
         <span class="dot asterisk"></span>
         <span class="text">Asterisk 11 + DAHDI 2.10 Automatic install on CentOS 7</span>
         <span class="arrow">→</span>
       </a>
-      <a href="https://github.com/linuxshark/Asterisk-H.A-Corosync-Pacemaker-PCS" class="recipe-card" target="_blank" rel="noopener">
+      <a href="https://github.com/linuxshark/Asterisk-H.A-Corosync-Pacemaker-PCS" class="recipe-card" target="_blank" rel="noopener" onclick="event.stopPropagation()">
         <span class="dot asterisk"></span>
         <span class="text">Asterisk H.A with Corosync, Pacemaker and PCS on CentOS 7</span>
         <span class="arrow">→</span>
@@ -274,23 +330,25 @@
   </div>
 
   <!-- LINUX -->
-  <div class="category">
+  <div class="category" onclick="this.classList.toggle('open')">
     <div class="category-header">
       <div class="category-icon linux">🐧</div>
       <h3>Linux</h3>
+      <span class="category-count">3</span>
+      <span class="category-chevron">▶</span>
     </div>
     <div class="recipe-list">
-      <a href="https://github.com/linuxshark/KB-PhpMyFAQ-install" class="recipe-card" target="_blank" rel="noopener">
+      <a href="https://github.com/linuxshark/KB-PhpMyFAQ-install" class="recipe-card" target="_blank" rel="noopener" onclick="event.stopPropagation()">
         <span class="dot linux"></span>
         <span class="text">Knowledge Basement install based on PhpMyFAQ on CentOS 7</span>
         <span class="arrow">→</span>
       </a>
-      <a href="https://github.com/linuxshark/zabbix-autoinstall" class="recipe-card" target="_blank" rel="noopener">
+      <a href="https://github.com/linuxshark/zabbix-autoinstall" class="recipe-card" target="_blank" rel="noopener" onclick="event.stopPropagation()">
         <span class="dot linux"></span>
         <span class="text">Monitoring Site ZABBIX install based on CentOS 7</span>
         <span class="arrow">→</span>
       </a>
-      <a href="https://github.com/linuxshark/sauron-eye" class="recipe-card" target="_blank" rel="noopener">
+      <a href="https://github.com/linuxshark/sauron-eye" class="recipe-card" target="_blank" rel="noopener" onclick="event.stopPropagation()">
         <span class="dot linux"></span>
         <span class="text">Sauron Eye SSL certs checker, dockerized and slack notify</span>
         <span class="arrow">→</span>
@@ -299,29 +357,32 @@
   </div>
 
   <!-- CLOUD COMPUTING -->
-  <div class="category">
+  <div class="category" onclick="this.classList.toggle('open')">
     <div class="category-header">
       <div class="category-icon cloud">☁️</div>
       <h3>Cloud Computing</h3>
+      <span class="category-count">3</span>
+      <span class="category-chevron">▶</span>
     </div>
     <div class="recipe-list">
-      <a href="https://github.com/linuxshark/aws-automation-training" class="recipe-card" target="_blank" rel="noopener">
+      <a href="https://github.com/linuxshark/aws-automation-training" class="recipe-card" target="_blank" rel="noopener" onclick="event.stopPropagation()">
         <span class="dot cloud"></span>
         <span class="text">Amazon Web Services (AWS) automating training. TAC I.T</span>
         <span class="arrow">→</span>
       </a>
-      <a href="https://github.com/linuxshark/OpenStack-OCATA-Installing-Tutorial" class="recipe-card" target="_blank" rel="noopener">
+      <a href="https://github.com/linuxshark/OpenStack-OCATA-Installing-Tutorial" class="recipe-card" target="_blank" rel="noopener" onclick="event.stopPropagation()">
         <span class="dot cloud"></span>
         <span class="text">OpenStack -OCATA- Installation tutorial</span>
         <span class="arrow">→</span>
       </a>
-      <a href="https://github.com/linuxshark/nginx-ingress-ssl" class="recipe-card" target="_blank" rel="noopener">
+      <a href="https://github.com/linuxshark/nginx-ingress-ssl" class="recipe-card" target="_blank" rel="noopener" onclick="event.stopPropagation()">
         <span class="dot cloud"></span>
         <span class="text">Kubernetes Nginx-Ingress Controller + LetsEncrypt SSL certs</span>
         <span class="arrow">→</span>
       </a>
     </div>
   </div>
+
 </section>
 
 <!-- FOOTER -->
